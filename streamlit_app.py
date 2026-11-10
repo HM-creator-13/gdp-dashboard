@@ -22,6 +22,40 @@ st.set_page_config(
     layout="wide"
 )
 
+# ============================================================
+# LABSTREAM AUTOMATION — BRAND DESIGN
+# ============================================================
+
+st.markdown("""
+<style>
+    /* Main background */
+    [data-testid="stAppViewContainer"] {
+        background-color: #0B1930;
+        color: #F4F8FC;
+    }
+
+    /* Sidebar */
+    [data-testid="stSidebar"] {
+        background-color: #102842;
+    }
+
+    /* Header */
+    [data-testid="stHeader"] {
+        background-color: #0B1930;
+    }
+
+    /* Main headings */
+    h1, h2, h3 {
+        color: #F4F8FC;
+    }
+
+    /* Subtle accent for dividers */
+    hr {
+        border-color: #31516B;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 INSTRUMENT_ID = "FHNW-LCMS-001"
 STATION_ID = "SSP-001"
 RECIPE_VERSION = "MPA-V1.0"
@@ -361,7 +395,32 @@ st.sidebar.caption(
 st.sidebar.warning(
     "SIMULATION — No physical hardware connection"
 )
+# ============================================================
+# PROJECT TEAM — LABSTREAM AUTOMATION
+# ============================================================
 
+st.sidebar.divider()
+
+st.sidebar.markdown(
+    "<span style='color:#7AD8DB; font-weight:700;'>"
+    "PROJECT TEAM</span>",
+    unsafe_allow_html=True
+)
+
+st.sidebar.caption("FHNW Life Sciences | 2026")
+
+st.sidebar.markdown("""
+<div style="line-height:1.9; color:#F4F8FC; font-size:14px;">
+    Yasmine Ben Sayed<br>
+    Irina Brandenberger<br>
+    Esma Kolbasi<br>
+    Hajar Maânaoui
+</div>
+""", unsafe_allow_html=True)
+
+st.sidebar.caption(
+    "LabStream Automation | Smart Solution Prep"
+)
 cleaning_due = (
     st.session_state.runs_since_cleaning
     >= st.session_state.cleaning_interval
